@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Will you be my Valentine Nidha Ashmin❤️? </title>
+    <title>Will You Be My Valentine Nidha Ashmin❤️?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
+            margin: 0;
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: pink;
-            margin-top: 150px;
             overflow: hidden;
+
+            /* BACKGROUND IMAGE */
+            background: url("images/background.jpg") no-repeat center center fixed;
+            background-size: cover;
         }
 
         h1 {
-            font-size: 30px;
+            margin-top: 120px;
+            font-size: 32px;
+            color: white;
+            text-shadow: 2px 2px 5px black;
         }
 
         button {
@@ -40,14 +46,14 @@
             color: white;
         }
 
-        /* POPUP STYLE */
+        /* POPUP OVERLAY */
         .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.7);
             display: none;
             align-items: center;
             justify-content: center;
@@ -59,17 +65,27 @@
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            width: 80%;
-            max-width: 300px;
+            width: 85%;
+            max-width: 350px;
             animation: pop 0.3s ease;
         }
 
         .popup-box h2 {
             color: #e60073;
+            margin-bottom: 10px;
+        }
+
+        .popup-box p {
+            margin-bottom: 15px;
+        }
+
+        .popup-box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
         .popup-box button {
-            margin-top: 15px;
             background: #e60073;
             color: white;
             padding: 10px 20px;
@@ -93,7 +109,7 @@
 
 <body>
 
-<h1>Will you be my Valentine Nidha Ashmin❤️? </h1>
+<h1>Will You Be My Valentine Nidha Ashmin❤️?</h1>
 
 <button id="yesBtn" onclick="sayYes()">Yes</button>
 <button id="noBtn">No</button>
@@ -102,7 +118,11 @@
 <div id="popup" class="popup-overlay">
     <div class="popup-box">
         <h2>Yayyy! ❤️</h2>
-        <p>Love You My Pumpkin 🥰</p>
+        <p>Love You Always My Pumpkin🥰</p>
+
+        <!-- POPUP IMAGE -->
+        <img src="images/popup.jpg" alt="Love Image">
+
         <button onclick="closePopup()">Close</button>
     </div>
 </div>
@@ -131,10 +151,8 @@
 
     var noButton = document.getElementById("noBtn");
 
-    // Desktop support
     noButton.addEventListener("mouseover", moveNoButton);
 
-    // Mobile support
     noButton.addEventListener("touchstart", function(e) {
         e.preventDefault();
         moveNoButton();
